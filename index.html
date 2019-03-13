@@ -74,19 +74,21 @@
     </main>
 
     <script>
-      var changeBackground = (function changeBackgroundFactory(colors) {
-        let i = 0;
+      window.onload = function() {
+        const changeBackground = (function changeBackgroundFactory(colors) {
+          let i = 0;
 
-        return function() {
-          i++;
-          if (i >= colors.length) i = 0;
+          return function() {
+            i++;
+            if (i >= colors.length) i = 0;
 
-          const body = document.getElementsByTagName("body")[0];
-          body.style.backgroundColor = colors[i];
-        };
-      })(["#CED1D3", "#E1E7E8", "#F4F1EA", "#E6E4DF", "#D5D4D2"]);
+            const body = document.getElementsByTagName("body")[0];
+            body.style.backgroundColor = colors[i];
+          };
+        })(["#CED1D3", "#E1E7E8", "#F4F1EA", "#E6E4DF", "#D5D4D2"]);
 
-      setInterval(changeBackground, 5000);
+        setInterval(changeBackground, 5000);
+      };
     </script>
   </body>
 </html>
